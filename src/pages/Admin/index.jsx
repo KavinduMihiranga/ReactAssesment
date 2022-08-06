@@ -19,7 +19,7 @@ class Admin extends Component {
 
                     <Grid item xs={5} sm={5} md={5} lg={5}>
 
-                        <Card sx={{maxWidth: 800}}>
+                        <Card sx={{maxWidth: 800}} style={{marginLeft: 50}}>
                             <CardActionArea>
                                 <div sx={{maxWidth: 120}} style={{textAlign: "Center", backgroundColor: "gray"}}>
 
@@ -44,7 +44,7 @@ class Admin extends Component {
                     </Grid>
                     <Grid item xs={5} sm={5} md={5} lg={5}>
 
-                        <Card sx={{maxWidth: 800}}>
+                        <Card sx={{maxWidth: 800}} style={{marginLeft: 50}}>
                             <CardActionArea>
                                 <div sx={{maxWidth: 120}} style={{textAlign: "Center", backgroundColor: "gray"}}>
 
@@ -69,7 +69,7 @@ class Admin extends Component {
                     </Grid>
                     <Grid item xs={5} sm={5} md={5} lg={5}>
 
-                        <Card sx={{maxWidth: 800}} style={{marginLeft: 10}}>
+                        <Card sx={{maxWidth: 800}} style={{marginLeft: 50}}>
                             <CardActionArea>
                                 <div sx={{maxWidth: 120}} style={{textAlign: "Center", backgroundColor: "gray"}}>
 
