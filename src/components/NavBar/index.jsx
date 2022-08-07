@@ -10,18 +10,21 @@ class NavBar extends Component{
     }
     render() {
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-body rounded" >
+            <Fragment>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-body rounded" >
 
-                <span className={"navbar-brand mb-0 h1"}><Link className={"nav-link"} to={"/"}>Dashboard</Link></span>
-                <ul className={"navbar-nav"}>
-                    <li className={"nav-item"}><Link className={"nav-link"} to={"/"}>Product</Link></li>
-                    <li className={"nav-item"}><Link className={"nav-link"} to={"/driverDetail"}>Cart</Link></li>
-                    <li className={"nav-item"}><Link className={"nav-link"} to={"/admin"}>Admin</Link></li>
+                    <button className={"navbar-brand mb-0 h1"}><Link className={"nav-link"} to={"/"}>Dashboard</Link></button>
+                    <ul className={"navbar-nav"}>
+                        <button className={"nav-item"} style={{marginLeft:20}}><Link className={"nav-link"} to={"/product"}>Product</Link></button>
+                        <button className={"nav-item"} style={{marginLeft:20}}><Link className={"nav-link"} to={"/cart"}>Cart</Link></button>
 
-                </ul>
-                <span className={"navbar-brand mb-0 h1"} >Kavindu</span>
+                    </ul>
+                    <span className={"navbar-brand mb-0 h1"}  style={{marginLeft:1000}}>Kavindu</span>
 
-            </nav>
+                </nav>
+            </Fragment>
+
+
 
         )
     }

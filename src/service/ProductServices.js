@@ -1,9 +1,9 @@
 import axios from "../axios";
 
-class UserServices {
-    postUser = async (data) => {
+class ProductServices {
+    postProduct = async (data) => {
         const promise = new Promise((resolve, reject) => {
-            axios.post('users', data).then((res) => {
+            axios.post('products', data).then((res) => {
                 return resolve(res)
             })
                 .catch((err) => {
@@ -13,9 +13,9 @@ class UserServices {
         return promise;
     }
 
-    fetchUser = async () => {
+    fetchProduct = async () => {
         const promise = new Promise((resolve, reject) => {
-            axios.get('users')
+            axios.get('products')
                 .then((res) => {
                     return resolve(res)
                 })
@@ -26,9 +26,9 @@ class UserServices {
 
         return await promise;
     }
-    putUser = async (data) => {
+    putProduct = async (data) => {
         const promise = new Promise(((resolve, reject) => {
-                axios.put('users', data).then((res) => {
+                axios.put('products', data).then((res) => {
                     return resolve(res)
                 })
                     .catch((err) => {
@@ -39,9 +39,9 @@ class UserServices {
         return await promise;
     }
 
-    deleteUser = async (params) => {
+    deleteProduct = async (params) => {
         const promise = new Promise((resolve, reject) => {
-            axios.delete('users',{params:params}).
+            axios.delete('products',{params:params}).
             then((res)=>{
                 return resolve(res)
             })
@@ -53,4 +53,4 @@ class UserServices {
     };
 }
 
-export default new UserServices();
+export default new ProductServices();

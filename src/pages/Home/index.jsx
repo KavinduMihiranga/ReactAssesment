@@ -6,6 +6,7 @@ import GDSEButton from "../../components/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import {Link} from "react-router-dom";
+import Admin from "../Admin";
 
 class Home extends Component {
     constructor(props) {
@@ -35,8 +36,11 @@ class Home extends Component {
             this.setState({
                 open: true,
                 message: 'User credential matching sucess!',
-                severity: 'success'
+                severity: 'success',
+
+
             })
+
         } else {
             console.log('credential didn\'t matche!')
             this.setState({
@@ -84,13 +88,20 @@ class Home extends Component {
                             />
                         </div>
                         <div className={classes.btn__container}>
-                            <GDSEButton
-                                variant="contained"
-                                label="Login"
-                                onClick={() => {
-                                    this.checkValidity()
-                                }}
-                            />
+
+
+                            <Link to={"/admin"}>
+                                <GDSEButton
+                                    variant="contained"
+                                    label="Login"
+                                    onClick={() => {
+                                        this.checkValidity()
+                                    }}
+                                />
+
+                            </Link>
+
+
                         </div>
                         <div>
                            <Typography>
