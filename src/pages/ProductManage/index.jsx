@@ -25,7 +25,6 @@ import {Category} from "@mui/icons-material";
 class ProductManage extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             formData: {
                 title: "",
@@ -40,6 +39,7 @@ class ProductManage extends Component {
             severity: '',
 
             data: [],
+            loaded: false,
             btnLabel: 'Save',
             btnColor: 'primary',
 
@@ -167,7 +167,7 @@ class ProductManage extends Component {
         console.log(this.state.data)
     }
     render() {
-
+        const { classes } = this.props;
         return (
 
             <Fragment>
@@ -183,7 +183,7 @@ class ProductManage extends Component {
                 <ValidatorForm
                     ref="form"
                     className="pt-2"
-                    // onSubmit={this.submitPayment}
+                    onSubmit={this.submitProduct()}
 
                 >
                     <Grid container className="pt-2" spacing={3} style={{backgroundColor:"#d9d9d9"}}>
@@ -258,6 +258,22 @@ class ProductManage extends Component {
                             />
                         </Grid>
                     </Grid>
+
+                    <Grid container style={{marginTop: 150}} direction="row" justifyContent="flex-end"
+                          alignItems="center" style={{backgroundColor:"#d9d9d9"}}
+                          // onClick={this.clearFields}
+                    >
+                        <GDSEButton  size="bif" label={"Clear"}
+                                     variant="contained"
+
+                                     style={{marginRight: 20,backgroundColor:"#98801C"}}
+                        />
+                        <GDSEButton type="submit" size="big" label={"Save"}
+                                    style={{marginRight: 20}}
+                                    // onClick={this.clearFields}
+                                    variant="contained"/>
+                    </Grid>
+
                 </ValidatorForm>
 
 
@@ -287,16 +303,6 @@ class ProductManage extends Component {
 
                 </Grid>
 
-                <Grid container style={{marginTop: 150}} direction="row" justifyContent="flex-end"
-                      alignItems="center" style={{backgroundColor:"#d9d9d9"}} onClick={this.clearFields}>
-                    <GDSEButton type="submit" size="bif" label={"Clear"}
-                                variant="contained"
-                                style={{marginRight: 20,backgroundColor:"#98801C"}}
-                    />
-                    <GDSEButton type="submit" size="big" label={"Save"}
-                                style={{marginRight: 20}}
-                                variant="contained"/>
-                </Grid>
 
 
                 <Grid container style={{marginTop: '10px'}}>
@@ -313,12 +319,13 @@ class ProductManage extends Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {/*{this.state.data.map((row)=>(*/}
+                                {
+                                  this.state.date.map((row)=>(
                                 <TableRow>
-                                    <TableCell align="right">row.title}</TableCell>
-                                    <TableCell align="right">row.price}</TableCell>
-                                    <TableCell align="right">row.category}</TableCell>
-                                    <TableCell align="right">row.description}</TableCell>
+                                    <TableCell align="right">{row.title}</TableCell>
+                                    <TableCell align="right">{row.price}</TableCell>
+                                    <TableCell align="right">{row.category}</TableCell>
+                                    <TableCell align="right">{row.description}</TableCell>
 
 
                                     <TableCell align="right">
@@ -347,8 +354,8 @@ class ProductManage extends Component {
                                     </TableCell>
 
                                 </TableRow>
-                                {/*))*/}
-                                {/*}*/}
+                                ))
+                                }
 
                             </TableBody>
                         </Table>
