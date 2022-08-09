@@ -20,11 +20,13 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ProductServices from "../../service/ProductServices";
 import GDSESnackBar from "../../components/SnackBar";
+import Image from "../../components/image";
 class ProductManage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+
             formData: {
                 title: "",
                 price: "",
@@ -243,24 +245,10 @@ render() {
                     <Grid  container className="pt-2" spacing={3} style={{backgroundColor:"#d9d9d9"}}>
                         <Grid item xs={5} sm={5} md={5} lg={5} >
                             <div sx={{maxWidth: 120}}>
-                                {/*{console.log(this.handleChange.event)}*/}
-                                {/*<img src={this.handleChange.event} alt=""/>*/}
-                                <img src={user} alt=""/>
+                                <Image/>
                             </div>
-                            <TextField
-                                id="input-with-icon-textfield"
-                                label="Add Product"
-                                type={'file'}
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
 
-                                        </InputAdornment>
-                                    ),
-                                }}
-                                // onClick={this.setState.file}
-                                variant="standard"
-                            />
+
                         </Grid>
 
 

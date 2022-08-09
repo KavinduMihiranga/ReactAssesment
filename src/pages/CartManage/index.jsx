@@ -16,11 +16,59 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import TableBody from "@mui/material/TableBody";
 import GDSESnackBar from "../../components/SnackBar";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 class CartManage extends Component{
     constructor(props) {
         super(props);
 
         this.state={
+
+            users:[
+
+                {
+                    address: {
+                        geolocation: {
+                            lat: "-37.3159",
+                            long: "81.1496"
+                        },
+                        city: "kilcoole",
+                        street: "7835 new road"
+                    },
+                    _id: "62f22e6e3a45000013431f2d",
+                    id: 11,
+                    email: "John@gmail.com",
+                    username: "johnd",
+                    password: "m38rmF$",
+                    phone: "1-570-236-7033"
+                },
+                {
+                    address: {
+                        geolocation: {
+                            lat: "-37.3159",
+                            long: "81.1496"
+                        },
+                        city: "kilcoole",
+                        street: "Lovers Ln",
+                        number: 7267,
+                        zipcode: "12926-3874"
+                    },
+                    id: 2,
+                    email: "morrison@gmail.com",
+                    username: "mor_2314",
+                    password: "83r5^_",
+                    name: {
+                        firstname: "david",
+                        lastname: "morrison"
+                    },
+                    phone: "1-570-236-7033",
+                    __v: 0
+                },
+
+
+            ],
+
+
             formData:{
                 userId:"",
                 date:"",
@@ -191,13 +239,20 @@ class CartManage extends Component{
                 >
                     <Grid container className="pt-2" spacing={3} style={{backgroundColor:"#d9d9d9"}}>
                         <Grid item xs={12} sm={12} md={6} lg={6} >
-                            <TextValidator
-                                id="outlinedbasic"
-                                placeholder="User Name"
-                                variant="outlined"
-                                size="small"
+                            <Autocomplete
+                                disablePortal
+                                id="combo-box-demo"
+                                options={this.state.users}
+                                sx={{ width: 300 }}
                                 style={{width: '100%',backgroundColor:"white"}}
-
+                                renderInput={(params) => <TextField {...params} label="User name" />}
+                                getOptionLabel={
+                                    (option)=>option.username
+                                }
+                                onChange={(e,value)=>{
+                                    console.log(value.id)
+                                }}
+                                size={"small"}
                             />
 
                         </Grid>
